@@ -4,13 +4,13 @@ export const Cotas = () => (
       <span className="absolute -left-1.5 top-0 h-px w-3.5 bg-coral" />
       <span className="absolute -left-1.5 bottom-0 h-px w-3.5 bg-coral" />
     </div>
-    <span className="cota cota-fade absolute left-7 top-1/2 -translate-y-1/2 [writing-mode:vertical-rl] rotate-180">760</span>
+    <span className="cota cota-fade absolute left-7 top-1/2 -translate-y-1/2 rounded-sm bg-ink/70 px-0.5 py-1 [writing-mode:vertical-rl] rotate-180">760</span>
 
     <div className="cota cota-x absolute bottom-5 left-10 right-5 h-px bg-coral">
       <span className="absolute -top-1.5 left-0 h-3.5 w-px bg-coral" />
       <span className="absolute -top-1.5 right-0 h-3.5 w-px bg-coral" />
     </div>
-    <span className="cota cota-fade absolute bottom-7 left-1/2 -translate-x-1/2">1.800</span>
+    <span className="cota cota-fade absolute bottom-7 left-1/2 -translate-x-1/2 rounded-sm bg-ink/70 px-1 py-0.5">1.800</span>
 
     <div className="cota cota-fade absolute right-5 top-5 flex items-center gap-2">
       <span className="h-px w-10 bg-coral" />
