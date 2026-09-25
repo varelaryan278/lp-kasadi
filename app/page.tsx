@@ -7,6 +7,7 @@ import { Orcamento } from "./_components/Orcamento";
 import { Showroom } from "./_components/Showroom";
 import { Footer } from "./_components/Footer";
 import { JsonLd } from "./_components/JsonLd";
+import { WhatsappFlutuante } from "./_components/WhatsappFlutuante";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Showroom />
       </main>
       <Footer />
+      <WhatsappFlutuante />
     </>
   );
 }

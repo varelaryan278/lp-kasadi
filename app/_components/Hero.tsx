@@ -1,4 +1,5 @@
-import { FrameDrawing } from "./FrameDrawing";
+import { Cotas } from "./Cotas";
+import { Video } from "./Video";
 
 const facts = [
   "Produção própria, sem intermediário",
@@ -40,8 +41,9 @@ export const Hero = () => (
           ))}
         </ul>
       </div>
-      <div className="rounded-lg border border-steel-2 bg-steel p-4 sm:p-6">
-        <FrameDrawing />
+      <div className="relative aspect-video overflow-hidden rounded-lg border border-steel-2 bg-steel">
+        <Video src="/video/hero.mp4" poster="/fotos/mesa.jpg" />
+        <Cotas />
       </div>
     </div>
   </section>

@@ -1,8 +1,9 @@
 import Image from "next/image";
 
+import { Video } from "./Video";
+
 const fotos = [
   { arquivo: "solda", alt: "Solda de tubo de metalon na oficina da Kasadi" },
-  { arquivo: "faisca", alt: "Acabamento de cordão de solda com esmerilhadeira" },
   { arquivo: "furadeira", alt: "Furadeira de bancada perfurando tubo de metalon" },
 ];
 
@@ -37,13 +38,18 @@ export const Fabrica = () => (
           ))}
         </ul>
       </div>
-      <ul className="mt-12 grid gap-2 sm:grid-cols-3">
-        {fotos.map((f) => (
-          <li key={f.arquivo} className="relative aspect-video overflow-hidden rounded-md bg-steel">
-            <Image src={`/fotos/${f.arquivo}.jpg`} alt={f.alt} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
-          </li>
-        ))}
-      </ul>
+      <div className="mt-12 grid gap-2 lg:grid-cols-3">
+        <div className="relative aspect-video overflow-hidden rounded-md bg-steel lg:col-span-2">
+          <Video src="/video/oficina.mp4" poster="/fotos/faisca.jpg" />
+        </div>
+        <ul className="grid grid-cols-2 gap-2 lg:grid-cols-1">
+          {fotos.map((f) => (
+            <li key={f.arquivo} className="relative aspect-video overflow-hidden rounded-md bg-steel">
+              <Image src={`/fotos/${f.arquivo}.jpg`} alt={f.alt} fill sizes="(max-width: 1024px) 50vw, 33vw" className="object-cover" />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 );

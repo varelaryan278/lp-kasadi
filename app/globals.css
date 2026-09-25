@@ -32,6 +32,41 @@ body {
   font-family: var(--font-body), system-ui, sans-serif;
 }
 
+@keyframes cota-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes cota-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes cota-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cota-y {
+  transform-origin: top;
+  animation: cota-y 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.6s both;
+}
+
+.cota-x {
+  transform-origin: left;
+  animation: cota-x 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.9s both;
+}
+
+.cota-fade {
+  animation: cota-fade 0.5s ease-out 1.4s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cota {
+    animation: none;
+  }
+}
+
 :focus-visible {
   outline: 3px solid var(--color-coral);
   outline-offset: 3px;
