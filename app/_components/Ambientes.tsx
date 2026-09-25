@@ -25,7 +25,7 @@ export const Ambientes = () => (
           <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-concrete-2">
             <Image
               src={`/fotos/${a.foto}.jpg`}
-              alt=""
+              alt={`${a.titulo}: ${a.texto}`}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover"

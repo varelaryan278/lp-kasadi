@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Barlow, Barlow_Condensed } from "next/font/google";
+import { site } from "./_lib/site";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -17,9 +18,38 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Kasadi Móveis | Móveis sob medida em Presidente Epitácio",
-  description:
-    "Projetos personalizados em metalon e MDF para casa e comércio. Fabricação própria, entrega e instalação em Presidente Epitácio e região.",
+  metadataBase: new URL(site.url),
+  title: site.title,
+  description: site.description,
+  applicationName: site.name,
+  keywords: [
+    "móveis sob medida",
+    "móveis planejados",
+    "móveis industriais",
+    "metalon e MDF",
+    "serralheria",
+    "Presidente Epitácio",
+    "Kasadi Móveis",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#151515",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

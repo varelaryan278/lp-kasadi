@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-const fotos = ["solda", "faisca", "furadeira"];
+const fotos = [
+  { arquivo: "solda", alt: "Solda de tubo de metalon na oficina da Kasadi" },
+  { arquivo: "faisca", alt: "Acabamento de cordão de solda com esmerilhadeira" },
+  { arquivo: "furadeira", alt: "Furadeira de bancada perfurando tubo de metalon" },
+];
 
 const razoes = [
   { titulo: "Quem desenha é quem solda", texto: "Não terceirizamos nada. O mesmo time que projeta acompanha a peça até a instalação." },
@@ -35,8 +39,8 @@ export const Fabrica = () => (
       </div>
       <ul className="mt-12 grid gap-2 sm:grid-cols-3">
         {fotos.map((f) => (
-          <li key={f} className="relative aspect-video overflow-hidden rounded-md bg-steel">
-            <Image src={`/fotos/${f}.jpg`} alt="" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
+          <li key={f.arquivo} className="relative aspect-video overflow-hidden rounded-md bg-steel">
+            <Image src={`/fotos/${f.arquivo}.jpg`} alt={f.alt} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
           </li>
         ))}
       </ul>

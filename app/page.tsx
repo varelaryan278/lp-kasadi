@@ -6,10 +6,12 @@ import { Fabrica } from "./_components/Fabrica";
 import { Orcamento } from "./_components/Orcamento";
 import { Showroom } from "./_components/Showroom";
 import { Footer } from "./_components/Footer";
+import { JsonLd } from "./_components/JsonLd";
 
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Header />
       <main>
         <Hero />
