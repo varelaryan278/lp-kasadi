@@ -9,13 +9,13 @@ export const Video = ({ src, poster, className = "" }: Props) => {
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) el.play().catch(() => {});
         else el.pause();
       },
-      { threshold: 0.35 }
+      { threshold: 0.2 }
     );
     io.observe(el);
     return () => io.disconnect();
@@ -26,10 +26,11 @@ export const Video = ({ src, poster, className = "" }: Props) => {
       ref={ref}
       src={src}
       poster={poster}
+      autoPlay
       muted
       loop
       playsInline
-      preload="none"
+      preload="metadata"
       aria-hidden="true"
       className={`h-full w-full object-cover ${className}`}
     />
